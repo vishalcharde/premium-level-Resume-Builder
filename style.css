@@ -580,6 +580,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    grid-column: span 2;
 }
 
 .repeater-card {
@@ -649,6 +650,7 @@ body {
     justify-content: center;
     gap: 8px;
     transition: var(--transition-smooth);
+    grid-column: span 2;
 }
 
 .add-repeater-item-btn:hover {
@@ -680,6 +682,7 @@ body {
     padding: 20mm;
     box-sizing: border-box;
     position: relative;
+    text-align: left;
 }
 
 /* Base structural layout for inner resume elements */
@@ -702,13 +705,14 @@ body {
 .canvas-item-subtitle { font-weight: 600; font-size: 0.88rem; color: var(--canvas-text-muted); }
 .canvas-item-date { font-size: 0.85rem; color: var(--canvas-text-muted); font-weight: 500; }
 .canvas-item-desc { font-size: 0.88rem; line-height: 1.45; white-space: pre-line; margin-top: 4px; }
+.canvas-item-block { margin-bottom: 14px; }
+.canvas-item-block:last-child { margin-bottom: 0; }
 
 /* --------------------------------------------------------------------------
    TEMPLATE 1: MODERN MINIMAL DESIGN STYLING
    -------------------------------------------------------------------------- */
 .template-modern {
     font-family: 'Inter', sans-serif;
-    --canvas-accent: #1e3a8a;
 }
 .template-modern .canvas-header {
     display: flex;
@@ -729,16 +733,16 @@ body {
    -------------------------------------------------------------------------- */
 .template-executive {
     font-family: 'Merriweather', Georgia, serif;
-    --canvas-accent: #111827;
 }
-.template-executive .canvas-header { text-align: center; border-bottom: 1px double var(--canvas-accent); padding-bottom: 20px; }
-.template-executive .canvas-identity h2 { font-size: 2.2rem; font-weight: 700; color: var(--canvas-accent); margin-bottom: 6px; }
+.template-executive .canvas-header { text-align: center; border-bottom: 1px double #111827; padding-bottom: 20px; }
+.template-executive .canvas-identity h2 { font-size: 2.2rem; font-weight: 700; color: #111827; margin-bottom: 6px; }
 .template-executive .canvas-identity p { font-size: 1rem; font-style: italic; color: var(--canvas-text-muted); }
 .template-executive .canvas-contact { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 10px; font-size: 0.8rem; border-top: 1px solid #e2e8f0; padding-top: 8px; font-family: 'Inter', sans-serif; }
-.template-executive .canvas-section-title { text-align: center; font-family: 'Merriweather', serif; font-weight: 700; border-bottom: 1px solid var(--canvas-accent); padding-bottom: 2px; }
-.template-executive .canvas-item-title { font-family: 'Merriweather', serif; }
-.template-executive .skill-tag { font-family: 'Inter', sans-serif; font-size: 0.82rem; }
-.template-executive .skill-tag:not(:last-child)::after { content: " • "; margin-left: 6px; color: var(--canvas-text-muted); }
+.template-executive .canvas-section-title { text-align: center; font-family: 'Merriweather', serif; font-weight: 700; color: #111827; border-bottom: 1px solid #111827; padding-bottom: 2px; }
+.template-executive .canvas-item-title { font-family: 'Merriweather', serif; color: #111827; }
+.template-executive .tag-cloud { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.template-executive .skill-tag { font-family: 'Inter', sans-serif; font-size: 0.85rem; color: var(--canvas-text-dark); font-weight: 500; }
+.template-executive .skill-tag:not(:last-child)::after { content: " • "; margin-left: 8px; color: var(--text-muted); }
 
 /* --------------------------------------------------------------------------
    TEMPLATE 3: TECH SIDEBAR DESIGN STYLING
@@ -746,18 +750,18 @@ body {
 .template-tech {
     font-family: 'Inter', sans-serif;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 240px;
     gap: 24px;
-    --canvas-accent: #0f766e;
 }
-.template-tech .canvas-header { grid-column: span 2; background-color: #f8fafc; margin: -20mm -20mm 20px -20mm; padding: 16mm 20mm; border-bottom: 4px solid var(--canvas-accent); display: flex; align-items: center; gap: 24px; }
-.template-tech .canvas-profile-img { width: 70px; height: 70px; border-radius: 8px; object-fit: cover; border: 2px solid var(--canvas-accent); }
+.template-tech .canvas-header { grid-column: span 2; background-color: #f8fafc; margin: -20mm -20mm 20px -20mm; padding: 16mm 20mm; border-bottom: 4px solid #0f766e; display: flex; align-items: center; gap: 24px; }
+.template-tech .canvas-profile-img { width: 75px; height: 75px; border-radius: 8px; object-fit: cover; border: 2px solid #0f766e; background-color: #cbd5e1; }
 .template-tech .canvas-identity h2 { font-size: 1.8rem; font-weight: 800; color: #0f172a; }
-.template-tech .canvas-identity p { color: var(--canvas-accent); font-weight: 600; font-size: 1rem; }
-.template-tech .canvas-contact { font-size: 0.8rem; display: flex; flex-direction: column; gap: 4px; border-left: 2px solid #cbd5e1; padding-left: 16px; margin-left: auto; }
-.template-tech .canvas-section-title { font-size: 0.95rem; color: var(--canvas-accent); border-bottom: 2px solid #ccfbf1; }
+.template-tech .canvas-identity p { color: #0f766e; font-weight: 600; font-size: 1rem; margin-top: 2px; }
+.template-tech .canvas-contact { font-size: 0.8rem; display: flex; flex-direction: column; gap: 4px; border-left: 2px solid #cbd5e1; padding-left: 16px; margin-left: auto; text-align: left; }
+.template-tech .canvas-section-title { font-size: 0.95rem; color: #0f766e; border-bottom: 2px solid #ccfbf1; }
 .template-tech .tech-main-col { display: flex; flex-direction: column; gap: 18px; }
-.template-tech .tech-side-col { display: flex; flex-direction: column; gap: 18px; background-color: #fafafa; margin: -20px -20mm -20mm 0; padding: 0 20mm 20mm 16px; border-left: 1px solid #f1f5f9; }
+.template-tech .tech-side-col { display: flex; flex-direction: column; gap: 18px; background-color: #f8fafc; margin: -20px -20mm -20mm -12px; padding: 12px 20mm 20mm 16px; border-left: 1px solid #e2e8f0; }
+.template-tech .tag-cloud { display: flex; flex-wrap: wrap; gap: 6px; }
 .template-tech .skill-tag { background-color: #ccfbf1; color: #115e59; padding: 3px 8px; border-radius: 4px; font-size: 0.76rem; font-weight: 600; }
 
 /* ==========================================================================
@@ -805,7 +809,7 @@ body {
 }
 
 @media (max-width: 860px) {
-    .resume-paper-shadow-wrapper { overflow-x: auto; width: 100%; }
+    .resume-paper-shadow-wrapper { overflow-x: auto; width: 100%; display: block; }
     .resume-canvas { width: 210mm; }
 }
 
